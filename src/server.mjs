@@ -19,7 +19,9 @@ app.get('/mirror', function(req, res) {
 });
 
 app.get('/time', function(req, res) {
-    res.status(200).json({data: (new Date().getTime()) });
+    var time = new Date();
+    var timeResponse = time.getTime();
+    res.status(200).json({ data: timeResponse });
 });
 
 new SocketClient('1inchusdt', 3600000); 
